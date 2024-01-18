@@ -9,10 +9,10 @@ export class Ticket {
     user: string;
 
     @Column()
-    dateCreate: Date;
+    dateCreate: number;
 
     @Column()
-    dateUpdate: Date;
+    dateUpdate: number;
 
     @Column()
     status: Boolean;

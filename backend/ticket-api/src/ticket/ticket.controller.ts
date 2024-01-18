@@ -1,7 +1,10 @@
-import { Controller, Get, Post, Put, Delete, Body, Query } from '@nestjs/common';
-import { CreateTicketDto } from './dto/createTicket.dto';
-import { TicketDto } from './dto/ticket.dto';
+import { Controller, Get, Post, Put, Delete, Body, Query, Req } from '@nestjs/common';
+import { CreateTicketDto } from './dto/request/createTicket.dto';
+import { TicketDto } from './dto/response/ticket.dto';
 import { TicketService } from './ticket.service';
+import { UpdateTicketDto } from './dto/request/updateTicket.dto';
+import { TicketSearchDto } from './dto/request/ticket-search.dto'; 
+import * as dayjs from "dayjs";
 
 
 @Controller('ticket')
@@ -14,24 +17,20 @@ export class TicketController {
         return await this.ticketService.create(createTicketDto);
     }
 
-    @Get(':id') //get con paginacion // @Get('/articles/:ARTICLE_ID/details')
-    async get(
-        @Query("id") id: Number,
-        @Query("page") page: Number,
-        @Query("limit") limit: Number,
-    ) {
-        this.ticketService.get(id, page, limit);
+    @Get()
+    async get(@Req() request) {
+        return await this.ticketService.get(request.query as TicketSearchDto);
     }
 
     @Put()
-    async update(@Body() updateTicketDto: TicketDto) {
-        this.ticketService.update(updateTicketDto);
+    async update(@Body() updateTicketDto: UpdateTicketDto) {
+        return await this.ticketService.update(updateTicketDto);
     }
 
-    @Delete(':id')
+    @Delete()
     async delete(
-        @Query("id") id: Number,
+        @Query("id") id: number,
     ) {
-        this.ticketService.delete(id);
+        return await this.ticketService.delete(id);
     }
 }

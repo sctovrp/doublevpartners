@@ -6,15 +6,7 @@ export class CreateTicketDto {
     user: string
 
     @IsNotEmpty()
-    @IsDateString()
-    dateCreate: Date;
-    
-    @IsNotEmpty()
-    @IsDateString()
-    dateUpdate: Date;
-
-    @IsNotEmpty()
     @IsBoolean()
-    status: Boolean;
+    status: boolean;
 }
 

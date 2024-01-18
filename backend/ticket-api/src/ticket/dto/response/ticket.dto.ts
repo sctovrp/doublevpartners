@@ -3,7 +3,7 @@ import { IsBoolean, IsDateString, IsNotEmpty, IsNumber, IsString } from "class-v
 export class TicketDto {
     @IsNotEmpty()
     @IsNumber()
-    id: Number;
+    id: number;
 
     @IsNotEmpty()
     @IsString()
@@ -11,13 +11,13 @@ export class TicketDto {
 
     @IsNotEmpty()
     @IsDateString()
-    dateCreate: Date;
+    dateCreate: string;
     
     @IsNotEmpty()
     @IsDateString()
-    dateUpdate: Date;
+    dateUpdate: string;
 
     @IsNotEmpty()
     @IsBoolean()
-    status: Boolean;
+    status: boolean;
 }
