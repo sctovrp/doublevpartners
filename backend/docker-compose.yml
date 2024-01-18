@@ -1,0 +1,20 @@
+version: '3.1'
+
+services:
+
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: skilltest
+      POSTGRES_PASSWORD: skilltest
+      POSTGRES_DB: ticketsdb
+    ports:
+      - "5433:5432"
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - "8080:8080"
+# DATABASE_URL=postgres://postgres:testdesignli@localhost:5432/?schema=public&connection_limit=1
