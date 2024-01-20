@@ -1,0 +1,86 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type TicketModel {
+  """ticket id"""
+  id: Int!
+
+  """ticket user associated"""
+  user: String!
+
+  """ticket creation date"""
+  dateCreate: String!
+
+  """ticket update date"""
+  dateUpdate: String!
+
+  """ticket status"""
+  status: Boolean!
+}
+
+type SearchTicketModel {
+  """ticket list"""
+  tickets: [TicketModel!]!
+
+  """ticket count"""
+  count: Int!
+}
+
+type Query {
+  getTickets(ticketSearchInput: TicketSearchInput!): SearchTicketModel!
+}
+
+input TicketSearchInput {
+  """user id"""
+  user: String
+
+  """ticket dateCreate"""
+  dateCreate: String
+
+  """ticket dateCreateMode"""
+  dateCreateMode: DateModeEnum
+
+  """ticket dateUpdate"""
+  dateUpdate: String
+
+  """ticket dateUpdateMode"""
+  dateUpdateMode: DateModeEnum
+
+  """ticket status"""
+  status: Boolean
+
+  """query page"""
+  page: Float
+
+  """query limit"""
+  limit: Float
+}
+
+enum DateModeEnum {
+  GT
+  LT
+  EQ
+}
+
+type Mutation {
+  createTicket(createTicketInput: CreateTicketInput!): TicketModel!
+  updateTicket(ticketUpdateInput: TicketUpdateInput!): TicketModel!
+  removeTicket(id: Int!): Boolean!
+}
+
+input CreateTicketInput {
+  """user id on ticket"""
+  user: String!
+
+  """ticket status"""
+  status: Boolean!
+}
+
+input TicketUpdateInput {
+  """user id"""
+  id: Float!
+
+  """ticket status"""
+  status: Boolean!
+}
