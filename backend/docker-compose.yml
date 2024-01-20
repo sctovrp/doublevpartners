@@ -6,7 +6,7 @@ services:
     image: postgres
     restart: always
     environment:
-      POSTGRES_USER: skilltest
+      POSTGRES_USER: c
       POSTGRES_PASSWORD: skilltest
       POSTGRES_DB: ticketsdb
     ports:

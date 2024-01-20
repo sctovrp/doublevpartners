@@ -1,0 +1,5 @@
+/tests
+/dist
+/node_modules
+.env
+.expo
