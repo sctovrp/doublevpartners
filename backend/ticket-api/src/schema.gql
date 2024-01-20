@@ -27,14 +27,8 @@ type SearchTicketModel {
   count: Int!
 }
 
-type User {
-  """Example field (placeholder)"""
-  exampleField: Int!
-}
-
 type Query {
   getTickets(ticketSearchInput: TicketSearchInput!): SearchTicketModel!
-  user(id: Int!): User!
 }
 
 input TicketSearchInput {
@@ -73,9 +67,6 @@ type Mutation {
   createTicket(createTicketInput: CreateTicketInput!): TicketModel!
   updateTicket(ticketUpdateInput: TicketUpdateInput!): TicketModel!
   removeTicket(id: Int!): Boolean!
-  createUser(createUserInput: CreateUserInput!): User!
-  updateUser(updateUserInput: UpdateUserInput!): User!
-  removeUser(id: Int!): User!
 }
 
 input CreateTicketInput {
@@ -92,15 +83,4 @@ input TicketUpdateInput {
 
   """ticket status"""
   status: Boolean!
-}
-
-input CreateUserInput {
-  """Example field (placeholder)"""
-  exampleField: Int!
-}
-
-input UpdateUserInput {
-  """Example field (placeholder)"""
-  exampleField: Int
-  id: Int!
 }
