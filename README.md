@@ -191,4 +191,4 @@ variables:
 
 ## Feedback
 
-Quiero empezar agradeciendo la oportunidad de tenerme en cuenta para este proceso de contratación. Quedo atento a cualquier comentario o sugerencia que pueda tener sobre la prueba y poder hacer parte del equipo de trabajo de Double V Partners.
+Quiero empezar agradeciendo la oportunidad de tenerme en cuenta para este proceso de contratación. Quedo atento a cualquier comentario o sugerencia que pueda tener sobre la prueba y espero poder hacer parte del equipo de trabajo de Double V Partners.
